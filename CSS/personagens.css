@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+  }
+  
+  .background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+  
+  }
+  
+  .background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .background::after {
+    content: '';
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+  }
+  
+  :root {
+    --text: #EDF1F7;
+    --gray: #5E5B5C;
+  }
+  
+  body,
+  button,
+  a {
+    color: var(--text);
+    font: 400 1rem "Mukta", sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    column-gap: 64px;
+  
+    width: 65%;
+    max-width: 1440px;
+    padding-top: 24px;
+  }
+  
+  header img {
+    width: 60px;
+    height: auto;
+    margin-right: 30px;
+  }
+  
+  .navegation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  
+    list-style: none
+  }
+  
+  .navegation_link {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    left: -90px;
+    text-transform: uppercase;
+  
+    position: relative;
+  
+  }
+  
+  .navegation_link::after {
+      content: ""; 
+      position: absolute;
+      left: 0;
+      bottom: -3px; 
+      width: 0;
+      height: 2px; 
+      background-color: red; 
+      transition: width 0.3s ease; 
+  }
+  .navegation_link:hover {
+    color: red;
+  }
+  
+  .navegation_link:hover::after {
+    width: 100%;
+  }
+  
+  .navegation_social {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+  }
+  
+  .navegation_social svg {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: color 0.4s;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .navegation_social svg:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+
+  .container {
+    padding: 25px 9%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.container-image {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    margin-top: 30px; 
+}
+
+.container .image {
+    background-color: transparent; 
+    padding: 20px;
+    border-radius: 30px; 
+    border: 3px solid #ff0000; 
+    box-shadow: 0 5px 15px rgba(85, 128, 88, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: auto;
+    max-height: 450px;
+}
+
+.container .image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 25px rgba(255, 0, 0, 0.7);
+}
+
+.container .image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.container .image a {
+    font-size: 25px;
+    color: #ffffff; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container .image a:hover {
+    text-decoration: underline;
+    color: #f80808;
+    transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+    .container-image {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .container-image {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+
+
+.container h1 {
+    font-size: 3rem;
+    color: #ffffff; 
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555; 
+    animation: glowing-title 2s infinite alternate; 
+}
+
+@keyframes glowing-title {
+    0% {
+        text-shadow: 0 0 15px #ff0000, 0 0 30px #ff5555, 0 0 45px #ff0000;
+        color: #ff3333;
+}
+    100% {
+        text-shadow: none; 
+        color: #ffffff; 
+    }
+}
+
+
+.container .image {
+    border: 3px solid #ff0000; 
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+.container .image:hover {
+    box-shadow: 0 5px 25px rgba(255, 0, 0, 0.7); 
+    transform: scale(1.1); 
+}
+
+
+.container .image a {
+    color: #ffffff; 
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.container .image a:hover {
+    color: #ff3333; 
+    text-shadow: 0 0 15px #ff5555, 0 0 20px #ff0000; 
+}
+
+
+@keyframes link-hover-effect {
+    0% {
+        text-shadow: 0 0 15px #ff0000, 0 0 30px #ff3333;
+        color: #ff0000; 
+    }
+    100% {
+        text-shadow: none;
+        color: #ffffff; 
+    }
+}
+

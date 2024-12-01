@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.background::after {
+    content: '';
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+:root {
+    --text: #EDF1F7;
+    --gray: #5E5B5C;
+}
+
+body,
+button,
+a {
+    color: var(--text);
+    font: 400 1rem "Mukta", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    column-gap: 64px;
+
+    width: 65%;
+    max-width: 1440px;
+    padding-top: 24px;
+}
+
+header img {
+    width: 60px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.navegation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none
+}
+
+.navegation_link {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    left: -90px;
+    text-transform: uppercase;
+
+    position: relative;
+}
+
+.navegation_link::after {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: -3px; 
+    width: 0;
+    height: 2px; 
+    background-color: red; 
+    transition: width 0.3s ease; 
+}
+.navegation_link:hover {
+    color: red;
+}
+
+.navegation_link:hover::after {
+    width: 100%;
+}
+
+.navegation_social {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+
+.navegation_social svg {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: color 0.4s;
+    transition: transform 0.4s ease-in-out;
+}
+
+.navegation_social svg:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+#fotos {
+    padding-top: 50px; 
+}
+
+.titulo {
+    text-align: center;  
+    font-size: 36px; 
+    margin-bottom: 50px; 
+}
+
+#galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+    padding: 20px;
+    justify-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px; 
+}
+
+#galeria a {
+    display: block;
+    position: relative;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+#galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#galeria img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+.glide {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.glide__track {
+    overflow: hidden;
+}
+
+.glide__slides {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding: 0;
+    margin: 0;
+}
+
+
+.glide__slide {
+    width: 25%; 
+    box-sizing: border-box;
+    padding: 10px; 
+    display: flex;
+    justify-content: center;
+}
+
+.glide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.glide__slide img:hover {
+    transform: scale(1.05);
+}
+
+/* Setas de navegação */
+.glide__arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.glide__arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.glide__arrow--left {
+    left: 10px;
+}
+
+.glide__arrow--right {
+    right: 10px;
+}
+
+/* Paginação do carrossel */
+.glide__pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.glide__bullet {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.glide__bullet--active {
+    background-color: white;
+}
+
+
+
+
+
+.container h1 {
+    font-size: 3rem;
+    color: #ffffff; 
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555; 
+    animation: glowing-title 2s infinite alternate; 
+    margin-top: 50px;
+    text-align: center
+}
+
+@keyframes glowing-title {
+    0% {
+        text-shadow: 0 0 15px #ff0000, 0 0 30px #ff5555, 0 0 45px #ff0000;
+        color: #ff3333; 
+    }
+    100% {
+        text-shadow: none; 
+        color: #ffffff; 
+    }
+}
+
