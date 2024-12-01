@@ -17,3 +17,5 @@ JavaScript
 📖 Objetivo do projeto: Aplicar os fundamentos de desenvolvimento web aprendidos em aula, explorando a criação de uma página interativa e estilizada.
 
 Sinta-se à vontade para explorar o código e deixar sugestões! 🚀
+
+Visualize o site aqui: https://lucas-felipe777.github.io/SITE-SPIDERMAN/index.html
